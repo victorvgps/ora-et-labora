@@ -1,15 +1,15 @@
-
 @media (max-width: 768px) {
+
     main {
-        width: 95%;
-        padding: 10px;
-        margin: 10px auto;
-        border-radius: 8px;
+        width: 85%;
+        padding: 20px;
+        margin: 20px auto;
+        border-radius: 10px;
     }
 
     main h1 {
         font-size: 1.6em;
-        padding: 15px 0;
+        padding: 15px ;
     }
 
     .container {
@@ -19,12 +19,21 @@
     }
 
     .container article {
-        width: 90%;
+        width: 50%;
     }
 
     .container h2 {
         font-size: 1em;
         padding: 8px;
+    }
+
+    nav {
+        
+        width: 85%;
+        padding: 10px;
+        margin: 10px auto;
+        border-radius: 8px;
+    
     }
 
     nav ul {
@@ -49,6 +58,7 @@
 
 
 @media (min-width: 769px) and (max-width: 1024px) {
+
     main {
         width: 90%;
         padding: 20px;
@@ -68,7 +78,7 @@
     }
 
     .container article {
-        width: 50%;
+        width: 40%;
     }
 
     .container h2 {
