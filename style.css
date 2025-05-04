@@ -27,7 +27,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-image: url('/images/regina.png');
+    background-image: url('./images/regina.png');
     background-size: cover;         /* Faz a imagem cobrir todo o fundo */
     background-position: top;    /* Centraliza a imagem */
     background-repeat: no-repeat;
