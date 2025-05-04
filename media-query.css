@@ -1,4 +1,4 @@
-/* Celulares: até 768px */
+
 @media (max-width: 768px) {
     main {
         width: 95%;
@@ -47,7 +47,7 @@
     }
 }
 
-/* Tablets: entre 769px e 1024px */
+
 @media (min-width: 769px) and (max-width: 1024px) {
     main {
         width: 90%;
