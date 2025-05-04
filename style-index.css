@@ -32,6 +32,7 @@ body {
     background-position: top;    /* Centraliza a imagem */
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-position: center -320px;
 
 }
 
