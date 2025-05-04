@@ -23,7 +23,7 @@
 }
 
 body {
-    background: linear-gradient(45deg, var(--cor-primaria), var(--cor-secundaria), var(--cor-terciaria), var(--cor-quaternaria));
+    
     min-height: 100vh;
     display: flex;
     flex-direction: column;
