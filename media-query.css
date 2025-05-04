@@ -1,5 +1,7 @@
 @media (max-width: 768px) {
-
+    body {
+        background-position: center 0px;
+    }
     main {
         width: 90%;
         padding: 20px;
@@ -58,6 +60,9 @@
 
 
 @media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        background-position: center 0px;
+    }
 
     main {
         width: 90%;
