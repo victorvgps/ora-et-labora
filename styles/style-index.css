@@ -8,6 +8,30 @@
          
 }
 
+@font-face {
+    font-family: "Cardo";
+    src: url("../fonts/Cardo-Regular.ttf") format(truetype);
+}
+
+.cardo-regular {
+    font-family: "Cardo", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.1em;
+  }
+  
+  .cardo-bold {
+    font-family: "Cardo", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .cardo-regular-italic {
+    font-family: "Cardo", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
 :root {
     --cor-primaria: #D9A74A;
     --cor-secundaria: #F2C572;
@@ -134,10 +158,10 @@ main h1 {
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        flex-wrap: wrap;
 }
 
 .container article {
