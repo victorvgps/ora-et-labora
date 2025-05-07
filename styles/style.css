@@ -5,7 +5,6 @@
     src: url("../fonts/ Pro Regular.woff2") format("woff2"),
          url("../fonts/Trajan Pro Regular.woff") format("woff"),
          url("..fonts/Trajan Pro Regular.ttf") format("truetype");
-         
 }
 
 @font-face {
@@ -53,8 +52,8 @@ body {
     display: flex;
     flex-direction: column;
     background-image: url('../images/regina.png');
-    background-size: cover;         /* Faz a imagem cobrir todo o fundo */
-    background-position: top;    /* Centraliza a imagem */
+    background-size: cover;        
+    background-position: top;    
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center -320px;
@@ -136,7 +135,6 @@ a {
     text-decoration: none;
 }
 
-/* Conteúdo principal */
 main {
     width: 1400px;
     margin: 20px auto;
@@ -151,13 +149,12 @@ main h1 {
     text-align: center;
     border-bottom: 2px solid #f2c572;
     padding-top: 20px;
-    padding-bottom: 10px;   /* Aproxima a linha do texto */
-    margin-bottom: 40px;    /* Afasta o h1 dos elementos abaixo */
+    padding-bottom: 10px;   
+    margin-bottom: 40px;    
     font-size: 2.2em;
     color: var(--cor-secundaria);
 }
 
-/* Imagens no conteúdo */
 main img {
     display: block;
     margin: 0 auto;
@@ -165,7 +162,7 @@ main img {
     height: auto;
 }
 
-/* Parágrafos */
+
 main p {
     max-width: 600px;
     margin: 15px auto 10px auto;
@@ -174,7 +171,6 @@ main p {
     text-align: left;
 }
 
-/* Áudio */
 main audio {
     width: 100%;
     margin: 30px 0 5px 0;
@@ -219,7 +215,6 @@ iframe {
     border: none;
   }
 
-  /* Citação do dia */
 .citacao {
     margin: 50px auto;
     padding: 20px;
@@ -252,7 +247,6 @@ iframe {
     background-color: var(--cor-terciaria);
 }
 
-/* Newsletter */
 .newsletter {
     margin-top: 60px;
     text-align: center;
@@ -295,7 +289,6 @@ iframe {
     margin-top: 30px;
 }
 
-/* Botão "Voltar" */
 #voltar {
     text-align: center;
     width: 100px;
@@ -313,7 +306,6 @@ iframe {
     color: var(--cor-primaria);
 }
 
-/* Rodapé */
 footer {
     background-color: rgba(217, 197, 180, 0.6);
     font-weight: bold;

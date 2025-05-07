@@ -52,8 +52,8 @@ body {
     display: flex;
     flex-direction: column;
     background-image: url('../images/regina.png');
-    background-size: cover;         /* Faz a imagem cobrir todo o fundo */
-    background-position: top;    /* Centraliza a imagem */
+    background-size: cover;         
+    background-position: top;    
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center -320px;
@@ -150,8 +150,8 @@ main h1 {
     text-align: center;
     border-bottom: 2px solid #f2c572;
     padding-top: 20px;
-    padding-bottom: 10px;   /* Aproxima a linha do texto */
-    margin-bottom: 40px;    /* Afasta o h1 dos elementos abaixo */
+    padding-bottom: 10px;   
+    margin-bottom: 40px;  
     font-size: 2.2em;
     color: var(--cor-secundaria);
 }
@@ -230,7 +230,6 @@ main h1 {
     max-width: 900px;
 }
 
-/* Botão/Link Leia Mais */
 .leia-mais {
     text-align: center;
     margin-top: 30px;
@@ -250,7 +249,6 @@ main h1 {
     background-color: var(--cor-terciaria);
 }
 
-/* Newsletter */
 .newsletter {
     margin-top: 60px;
     text-align: center;
