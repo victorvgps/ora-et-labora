@@ -158,7 +158,7 @@ main h1 {
 
 .artigos {
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: center;
     gap: 30px;
     padding: 40px 20px;
@@ -184,6 +184,14 @@ main h1 {
     height: 200px;
     object-fit: cover;
     object-position: 80% 20%;
+    display: block;
+}
+
+.artigo#petrus > img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: 80% 80%;
     display: block;
 }
 

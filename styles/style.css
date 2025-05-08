@@ -179,8 +179,6 @@ main audio {
 section > h2 {
     color: #d99a4e;
     margin-bottom: 10px;
-    border-bottom: 2px solid #f2c572;
-    padding-bottom: 5px;
   }
 
 section > p {
@@ -318,5 +316,3 @@ footer p {
     color: var(--cor-texto);
     
 }
-
- 
