@@ -111,14 +111,13 @@ header p {
 }
 
 .logo {
-    width: 110px;
-    /* ajuste conforme necessário */
+    width: 125px;
     height: auto;
 }
 
 .titulo h1 {
     margin: 0;
-    text-align: left;
+    text-align: center;
 }
 
 
