@@ -58,6 +58,11 @@
         font-size: 1.3em;
         text-align: center;
     }
+
+    .logo {
+    width: 60px;
+    height: auto;
+}
 }
 
 
