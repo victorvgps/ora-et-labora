@@ -88,8 +88,7 @@ header::after {
     z-index: 1;
 }
 
-header h1,
-header p {
+header h1, header p {
     position: relative;
     z-index: 2;
     color: var(--cor-primaria)
