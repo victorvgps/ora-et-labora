@@ -251,6 +251,24 @@ main h1 {
     color: #333;
 }
 
+#btn-new-quote {
+    background-color: var(--cor-secundaria);
+    display: block;
+    margin: 40px auto;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#btn-new-quote:hover {
+    background-color: var(--cor-terciaria);
+}
+
+
 .citacao {
     margin: 50px auto;
     padding: 20px;
