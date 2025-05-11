@@ -117,4 +117,9 @@
     header p {
         font-size: 1.5em;
     }
+
+    .logo {
+        width: 90px;
+        height: auto;
+    }
 }

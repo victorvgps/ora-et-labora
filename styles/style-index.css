@@ -330,3 +330,24 @@ footer p {
 .newsletter button:hover {
     background-color: var(--cor-terciaria);
 }
+
+#btn-topo {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 20px;
+  background-color: var(--cor-primaria);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+#btn-topo:hover {
+  background-color: var(--cor-terciaria);
+}
