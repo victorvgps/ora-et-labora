@@ -1,49 +1,4 @@
-//go back to top button
-
-const botaoTopo = document.getElementById("btn-topo");
-
-window.addEventListener("scroll", () => {
-  botaoTopo.style.display = window.scrollY > 400 ? "block" : "none";
-});
-
-botaoTopo.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-// show random quote everytime that the page is loaded
-
-const quotes = [
-  "Quem canta reza duas vezes. — Santo Agostinho",
-  "Senhor, tu nos criaste para Ti, e o nosso coração anda inquieto enquanto não repousa em Ti. — Santo Agostinho",
-  "Nada te perturbe, nada te espante. Tudo passa. Deus não muda. — Santa Teresa de Ávila",
-  "A alma que caminha no amor não se cansa, nem se detém. — São João da Cruz",
-  "A oração é a respiração da alma. — São João Crisóstomo",
-  "A cruz é o livro mais profundo que um cristão pode ler. — São Luís Maria Grignion de Montfort",
-  "A fé vê o invisível, crê no inacreditável e recebe o impossível. — Santa Edith Stein",
-  "Cristo não nos prometeu uma vida sem cruz, mas a força para carregá-la. — Santo Inácio de Loyola",
-  "Permanece em silêncio, e Deus falará contigo. — São Padre Pio",
-  "O silêncio é a linguagem de Deus. — São João da Cruz",
-  "Confia no Senhor e faze o bem. — Salmo 37",
-  "A alegria é sinal de um coração que possui Deus. — Santa Teresa de Calcutá",
-  "Não tenha medo de ser santo. — São João Paulo II",
-  "Reza, espera e não te preocupes. A oração é a melhor arma. — São Padre Pio",
-  "Jesus Cristo é o mesmo ontem, hoje e sempre. — Hebreus 13,8"
-];
-
-const quote = document.getElementById("citacao-dia");
-const quoteButton = document.getElementById("btn-new-quote");
-
-function showRandomQuote() {
-  const index = Math.floor(Math.random() * quotes.length);
-  quote.textContent = quotes[index];
-}
-
-showRandomQuote();
-
-// Button to see another random quote
-quoteButton.addEventListener("click", showRandomQuote);
-
-// shows random chant everytime that page is loaded
+// --- Show random chant ---
 const chants = [
   {
     title: "Miserere Mei Deus",
@@ -78,14 +33,81 @@ const chants = [
 ];
 
 function showRandomChant() {
-  const index = Math.floor(Math.random() * chants.length);
-  const chant = chants[index];
+  const titleEl = document.getElementById("chant-title");
+  const sourceEl = document.getElementById("audio-source");
+  const descEl = document.getElementById("chant-description");
+  const audioEl = document.getElementById("chant-audio");
 
-  document.getElementById("chant-title").textContent = chant.title;
-  document.getElementById("audio-source").src = chant.audio;
-  document.getElementById("chant-description").textContent = chant.description;
+  if (titleEl && sourceEl && descEl && audioEl) {
+    const index = Math.floor(Math.random() * chants.length);
+    const chant = chants[index];
 
-  document.getElementById("chant-audio").load();
+    titleEl.textContent = chant.title;
+    sourceEl.src = chant.audio;
+    descEl.textContent = chant.description;
+
+    audioEl.load();
+  }
 }
 
 showRandomChant();
+
+// --- show random quote ---
+
+const quotes = [
+  "Quem canta reza duas vezes. — Santo Agostinho",
+  "Senhor, tu nos criaste para Ti, e o nosso coração anda inquieto enquanto não repousa em Ti. — Santo Agostinho",
+  "Nada te perturbe, nada te espante. Tudo passa. Deus não muda. — Santa Teresa de Ávila",
+  "A alma que caminha no amor não se cansa, nem se detém. — São João da Cruz",
+  "A oração é a respiração da alma. — São João Crisóstomo",
+  "A cruz é o livro mais profundo que um cristão pode ler. — São Luís Maria Grignion de Montfort",
+  "A fé vê o invisível, crê no inacreditável e recebe o impossível. — Santa Edith Stein",
+  "Cristo não nos prometeu uma vida sem cruz, mas a força para carregá-la. — Santo Inácio de Loyola",
+  "Permanece em silêncio, e Deus falará contigo. — São Padre Pio",
+  "O silêncio é a linguagem de Deus. — São João da Cruz",
+  "Confia no Senhor e faze o bem. — Salmo 37",
+  "A alegria é sinal de um coração que possui Deus. — Santa Teresa de Calcutá",
+  "Não tenha medo de ser santo. — São João Paulo II",
+  "Reza, espera e não te preocupes. A oração é a melhor arma. — São Padre Pio",
+  "Jesus Cristo é o mesmo ontem, hoje e sempre. — Hebreus 13,8"
+];
+
+const quote = document.getElementById("citacao-dia");
+const quoteButton = document.getElementById("btn-new-quote");
+
+function showRandomQuote() {
+  if (quote) {
+    const index = Math.floor(Math.random() * quotes.length);
+    quote.textContent = quotes[index];
+  }
+}
+
+showRandomQuote();
+
+if (quoteButton) {
+  quoteButton.addEventListener("click", showRandomQuote);
+}
+
+// --- button to goes back to the top of the page ---
+
+const botaoTopo = document.getElementById("btn-topo");
+
+if (botaoTopo) {
+  window.addEventListener("scroll", () => {
+    botaoTopo.style.display = window.scrollY > 400 ? "block" : "none";
+  });
+
+  botaoTopo.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+// --- button to go page back ---
+
+const backButton = document.getElementById("btn-back");
+
+if (backButton) {
+  backButton.addEventListener("click", () => {
+    window.location.href = "/";
+  });
+}

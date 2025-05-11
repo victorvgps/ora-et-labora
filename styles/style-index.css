@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: "Trajan Pro 3";
-    src: url("../fonts/ Pro Regular.woff2") format("woff2"),
+    src: url("../fonts/Trajan Pro Regular.woff2") format("woff2"),
         url("../fonts/Trajan Pro Regular.woff") format("woff"),
         url("..fonts/Trajan Pro Regular.ttf") format("truetype");
 
@@ -48,7 +48,8 @@
 }
 
 body {
-
+     background-color: #fff; /* Cor de fundo clara */
+     color: #333; /* Texto escuro */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -259,6 +260,7 @@ main h1 {
     padding: 10px 20px;
     border: none;
     border-radius: 6px;
+    cursor: pointer;
     font-weight: bold;
     text-decoration: none;
     transition: background-color 0.3s ease-in-out;

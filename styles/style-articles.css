@@ -266,6 +266,7 @@ main h1 {
     border: none;
     border-radius: 6px;
     font-weight: bold;
+    cursor: pointer;
     text-decoration: none;
     transition: background-color 0.3s ease-in-out;
 }
@@ -326,6 +327,24 @@ main h1 {
 }
 
 .newsletter button:hover {
+    background-color: var(--cor-terciaria);
+}
+
+#btn-back {
+    background-color: var(--cor-secundaria);
+    display: block;
+    margin: 40px auto;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#btn-back:hover {
     background-color: var(--cor-terciaria);
 }
 

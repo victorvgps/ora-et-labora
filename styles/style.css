@@ -253,6 +253,7 @@ iframe {
     padding: 10px 20px;
     border: none;
     border-radius: 6px;
+    cursor: pointer;
     font-weight: bold;
     text-decoration: none;
     transition: background-color 0.3s ease-in-out;
@@ -317,27 +318,22 @@ iframe {
     background-color: var(--cor-terciaria);
 }
 
-
-.alinhar {
-    text-align: center;
-    margin-top: 30px;
-}
-
-#voltar {
-    text-align: center;
-    width: 100px;
-    margin: 5px auto 0;
-    cursor: pointer;
+#btn-back {
+    background-color: var(--cor-secundaria);
+    display: block;
+    margin: 40px auto;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
     font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
 }
 
-#voltar:hover {
-    color: black;
-    text-decoration: underline;
-}
-
-#voltar:active {
-    color: var(--cor-primaria);
+#btn-back:hover {
+    background-color: var(--cor-terciaria);
 }
 
 #btn-topo {
