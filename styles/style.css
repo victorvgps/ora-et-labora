@@ -323,19 +323,6 @@ iframe {
     color: var(--cor-primaria);
 }
 
-footer {
-    background-color: rgba(217, 197, 180, 0.6);
-    font-weight: bold;
-    text-align: center;
-    padding: 10px;
-
-}
-
-footer p {
-    color: var(--cor-texto);
-
-}
-
 #btn-topo {
   display: none;
   position: fixed;
@@ -356,3 +343,17 @@ footer p {
 #btn-topo:hover {
   background-color: var(--cor-terciaria);
 }
+
+footer {
+    background-color: rgba(217, 197, 180, 0.6);
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+
+}
+
+footer p {
+    color: var(--cor-texto);
+
+}
+
