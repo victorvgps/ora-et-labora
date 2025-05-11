@@ -65,8 +65,14 @@
         width: 60px;
         height: auto;
     }
-}
 
+    #btn-topo {
+        left: 50%;
+        right: 50%;
+
+    }
+
+}
 
 @media (min-width: 769px) and (max-width: 1024px) {
     body {

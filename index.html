@@ -41,14 +41,14 @@
             </p>
         </section>
 
-        <section class="destaque">
-            <h2>Canto em Destaque: Miserere Mei Deus</h2>
-            <audio controls>
-                <source src="audios/miserere.mp3" type="audio/mpeg">
+        <section id="chant-of-the-day" class="destaque">
+            <h2>Canto em Destaque: <span id="chant-title"></span></h2>
+            <audio controls id="chant-audio">
+                <source id="audio-source" src="audios/miserere.mp3" type="audio/mpeg">
                 <track src="audios/miserere-legenda.vtt" kind="captions" srclang="la" label="Latim">
                 Seu navegador não suporta o elemento de áudio.
             </audio>
-            <p class="cardo-regular">
+            <p class="cardo-regular" id="chant-description">
                 Um dos salmos penitenciais mais profundos, tradicionalmente entoado nas noites da Quaresma.
             </p>
         </section>
@@ -115,7 +115,9 @@
             </form>
         </section>
     </main>
+
     <button id="btn-topo" title="Voltar ao topo">↑</button>
+    
     <footer>
         <p>Site criado por Victor Guilherme Pereira</p>
     </footer>
