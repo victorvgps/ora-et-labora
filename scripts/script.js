@@ -108,6 +108,6 @@ const backButton = document.getElementById("btn-back");
 
 if (backButton) {
   backButton.addEventListener("click", () => {
-    window.location.href = "/";
+    window.location.href = "/index.html";
   });
 }
