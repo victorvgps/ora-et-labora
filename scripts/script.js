@@ -33,9 +33,9 @@ const chants = [
 ];
 
 function showRandomChant() {
-  const titleEl = document.getElementById("chant-title");
+  const titleEl = document.getElementById("chant-day");
   const sourceEl = document.getElementById("audio-source");
-  const descEl = document.getElementById("chant-description");
+  const descEl = document.getElementById("chant-short-description");
   const audioEl = document.getElementById("chant-audio");
 
   if (titleEl && sourceEl && descEl && audioEl) {
@@ -108,6 +108,38 @@ const backButton = document.getElementById("btn-back");
 
 if (backButton) {
   backButton.addEventListener("click", () => {
-    window.location.href = "/";
+    window.location.href = "./index.html";
   });
 }
+
+
+// --- Button to expand lyrics ---
+
+const btnToggle = document.getElementById("btn-toggle-lyrics");
+const lyricsBlock = document.getElementById("chant-lyrics");
+
+btnToggle.addEventListener("click", () => {
+  lyricsBlock.classList.toggle("hidden");
+
+  // troca o texto do botão
+  if (lyricsBlock.classList.contains("hidden")) {
+    btnToggle.textContent = "Ver Letra Completa";
+  } else {
+    btnToggle.textContent = "Ocultar Letra";
+  }
+});
+
+// --- Button to expand lyrics translation ---
+
+const btnToggleTranslation = document.getElementById("btn-toggle-lyrics-translation");
+const lyricsBlockTranslation = document.getElementById("chant-lyrics-translated");
+
+btnToggleTranslation.addEventListener("click", () => {
+  lyricsBlockTranslation.classList.toggle("hidden");
+
+  if (lyricsBlockTranslation.classList.contains("hidden")) {
+    btnToggleTranslation.textContent = "Ver Tradução Completa";
+  } else {
+    btnToggleTranslation.textContent = "Ocultar Tradução";
+  }
+});

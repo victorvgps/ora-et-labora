@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Canto | Ora et Labora</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/media-query.css" />
+</head>
+<body>
+
+   <header>
+    <div class="logo-titulo">
+      <img src="images/logo.png" alt="Logo Ora et Labora" class="logo">
+      <div class="titulo">
+        <h1>ORA ET LABORA</h1>
+        <p>Cantos Gregorianos</p>
+      </div>
+      <img src="images/logo.png" alt="Logo Ora et Labora" class="logo">
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="#">Todos os Cantos</a></li>
+      <li><a href="./articles.html">Artigos</a></li>
+      <li><a href="#">Orações em Latim</a></li>
+      <li><a href="#">Sobre</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1 id="chant-title">Canto</h1>
+
+    <div class="centralizar">
+      <img id="chant-image" src="" alt="" />
+    </div>
+
+    <audio controls id="chant-audio">
+      <source id="audio-source" src="" type="audio/mpeg" />
+      Seu navegador não suporta o áudio.
+    </audio>
+
+    <p class="cardo-regular" id="chant-description"></p>
+
+    <section>
+      <h2>Letra em Latim</h2>
+      <div id="chant-lyrics"></div>
+    </section>
+
+    <section>
+      <h2>Tradução</h2>
+      <div id="chant-translation"></div>
+    </section>
+
+    <section>
+      <h2>História e Significado</h2>
+      <div id="chant-history"></div>
+    </section>
+
+    <section class="video">
+      <h2>Assista à Interpretação</h2>
+      <iframe id="chant-video" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <blockquote class="citacao cardo-regular-italic" id="citacao-dia"></blockquote>
+
+    <button id="btn-new-quote" type="button" title="nova citacao-dia">Nova Citação</button>
+
+    <div class="leia-mais">
+      <a href="sobre-canto-gregoriano.html">O que é o Canto Gregoriano?</a>
+    </div>
+
+    <section class="newsletter">
+      <h2>Receba novidades sobre novos cantos</h2>
+      <form>
+        <input type="email" placeholder="Seu email" required />
+        <button type="submit">Inscrever-se</button>
+      </form>
+    </section>
+
+  <button id="btn-back" type="button" title="go back to home">← Página Inicial</button>
+  </main>
+  <button id="btn-topo" type="button" title="Voltar ao topo">↑</button>
+  <footer>
+    <p>Site Criado por Victor Guilherme Pereira</p>
+  </footer>
+
+  
+
+</body>
+  <script src="scripts/canto-data.js"></script>
+  <script src="scripts/canto-loader.js"></script>
+<script src="scripts/script.js"></script>
+</html>
