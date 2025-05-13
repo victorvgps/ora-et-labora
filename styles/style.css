@@ -39,6 +39,11 @@
     --cor-texto: #8C603A;
 }
 
+.texto-colorido {
+    line-height: 1.6;
+    color: #4e2e15;
+}
+
 * {
     margin: 0;
     padding: 0;

@@ -1,5 +1,5 @@
 // --- Show random chant ---
-const chants = [
+const randomChant = [
   {
     title: "Miserere Mei Deus",
     audio: "audios/miserere.mp3",
@@ -39,12 +39,12 @@ function showRandomChant() {
   const audioEl = document.getElementById("chant-audio");
 
   if (titleEl && sourceEl && descEl && audioEl) {
-    const index = Math.floor(Math.random() * chants.length);
-    const chant = chants[index];
+    const index = Math.floor(Math.random() * randomChant.length);
+    const showedChant = randomChant[index];
 
-    titleEl.textContent = chant.title;
-    sourceEl.src = chant.audio;
-    descEl.textContent = chant.description;
+    titleEl.textContent = showedChant.title;
+    sourceEl.src = showedChant.audio;
+    descEl.textContent = showedChant.description;
 
     audioEl.load();
   }
