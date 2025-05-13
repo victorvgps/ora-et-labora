@@ -6,7 +6,7 @@ title: "Miserere Mei Deus",
 image: "images/miserere.png",
 audio: "audios/miserere.mp3",
 pdf: "pdf/miserere.pdf",
-video: "https://www.youtube.com/embed/ZkMv_5T9G94",
+video: "https://www.youtube.com/embed/H3v9unphfi0?si=AHNGc2T7oaFqO9ka", 
 lyrics: [
 "Miserere mei, Deus, secundum magnam misericordiam tuam.",
   "Et secundum multitudinem miserationum tuarum, dele iniquitatem meam.",
