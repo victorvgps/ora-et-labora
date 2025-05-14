@@ -388,7 +388,15 @@ iframe {
 }
 
 .hidden {
-  display: none;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.hidden.open {
+  max-height: 2000px; /* um valor grande o bastante para o conteúdo */
+  opacity: 1;
 }
 
 footer {

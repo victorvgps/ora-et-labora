@@ -113,33 +113,3 @@ if (backButton) {
 }
 
 
-// --- Button to expand lyrics ---
-
-const btnToggle = document.getElementById("btn-toggle-lyrics");
-const lyricsBlock = document.getElementById("chant-lyrics");
-
-btnToggle.addEventListener("click", () => {
-  lyricsBlock.classList.toggle("hidden");
-
-  // troca o texto do botão
-  if (lyricsBlock.classList.contains("hidden")) {
-    btnToggle.textContent = "Ver Letra Completa";
-  } else {
-    btnToggle.textContent = "Ocultar Letra";
-  }
-});
-
-// --- Button to expand lyrics translation ---
-
-const btnToggleTranslation = document.getElementById("btn-toggle-lyrics-translation");
-const lyricsBlockTranslation = document.getElementById("chant-lyrics-translated");
-
-btnToggleTranslation.addEventListener("click", () => {
-  lyricsBlockTranslation.classList.toggle("hidden");
-
-  if (lyricsBlockTranslation.classList.contains("hidden")) {
-    btnToggleTranslation.textContent = "Ver Tradução Completa";
-  } else {
-    btnToggleTranslation.textContent = "Ocultar Tradução";
-  }
-});

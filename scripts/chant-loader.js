@@ -1,22 +1,22 @@
-//  URL parameter
+//  --- URL parameter ---
 
 function getChantIdFromUrl() {
   const params = new URLSearchParams(window.location.search);
   return params.get("canto");
 }
 
-// function to build page content
+// --- function to build page content ---
 
 function loadChant() {
   const id = getChantIdFromUrl();
-  const chant = chants[id]; 
+  const chant = chants[id];
 
   if (!chant) {
     document.body.innerHTML = "<p style='text-align:center;'>Canto não encontrado.</p>";
     return;
   }
 
-  // Fill HTML data
+  // --- Fill HTML data ---
 
   document.title = `${chant.title} | Ora et Labora`;
   document.getElementById("page-title").textContent = `${chant.title} | Ora et Labora`;
@@ -27,37 +27,95 @@ function loadChant() {
   document.getElementById("chant-audio").load();
   document.getElementById("chant-description").textContent = chant.description;
 
-  // Chant lyrics
+  // --- Chant lyrics ---
 
   const lyricsDiv = document.getElementById("chant-lyrics");
   lyricsDiv.innerHTML = "";
-  chant.lyrics.forEach(p => {
+
+  // --- To show only first four verses of the chant ---
+
+  const hiddenDiv = document.createElement("div");
+  hiddenDiv.classList.add("hidden");
+  hiddenDiv.id = "chant-lyrics-hidden";
+
+  chant.lyrics.forEach((line, index) => {
     const el = document.createElement("p");
     el.classList.add("texto-colorido");
-    el.innerHTML = p;
-    lyricsDiv.appendChild(el);
+    el.innerHTML = line;
+
+    if (index < 4) {
+      lyricsDiv.appendChild(el);
+    } else {
+      hiddenDiv.appendChild(el);
+    }
   });
 
+  lyricsDiv.appendChild(hiddenDiv);
 
+  // --- Expand lyrics button ---
 
-  // Chant translation
+  function initializeExpandLyricsButton() {
+    const btnToggleLyrics = document.getElementById("btn-toggle-lyrics");
+    const hiddenLyrics = document.getElementById("chant-lyrics-hidden");
+
+    if (!btnToggleLyrics || !hiddenLyrics) return;
+
+    btnToggleLyrics.addEventListener("click", () => {
+      hiddenLyrics.classList.toggle("open");
+
+      btnToggleLyrics.textContent = hiddenLyrics.classList.contains("open")
+        ? "Ver Letra Completa"
+        : "Ocultar Letra";
+    });
+  }
+
+  initializeExpandLyricsButton();
+
+  // --- Chant translation ---
 
   const translDiv = document.getElementById("chant-lyrics-translated");
   translDiv.innerHTML = "";
-  chant.translation.forEach(p => {
+
+
+  // --- To show only first four verses of the chant ---
+
+  const hiddenTranslDiv = document.createElement("div");
+  hiddenTranslDiv.classList.add("hidden");
+  hiddenTranslDiv.id = "chant-lyrics-translation-hidden";
+
+  chant.translation.forEach((line, index) => {
     const el = document.createElement("p");
     el.classList.add("texto-colorido");
-    el.innerHTML = p;
-    translDiv.appendChild(el);
+    el.innerHTML = line;
+
+    if (index < 4) {
+      translDiv.appendChild(el);
+    } else {
+      hiddenTranslDiv.appendChild(el);
+    }
   });
+  translDiv.appendChild(hiddenTranslDiv);
 
-  // Expand translation button 
+  // --- Expand translation button ---
 
- 
+  function initializeExpandTranslationButton() {
+    const btnToggleTranslation = document.getElementById("btn-toggle-lyrics-translation");
+    const lyricsBlockTranslation = document.getElementById("chant-lyrics-translation-hidden");
 
+    if (!btnToggleTranslation || !lyricsBlockTranslation) return;
 
+    btnToggleTranslation.addEventListener("click", () => {
+      lyricsBlockTranslation.classList.toggle("open");
 
-  // Chant history 
+      btnToggleTranslation.textContent = lyricsBlockTranslation.classList.contains("open")
+        ? "Ver Tradução Completa"
+        : "Ocultar Tradução";
+    });
+  }
+
+  initializeExpandTranslationButton();
+
+  // --- Chant history ---
 
   const histDiv = document.getElementById("chant-history");
   histDiv.innerHTML = "";
@@ -69,11 +127,11 @@ function loadChant() {
     histDiv.appendChild(el);
   });
 
-  // chant video
+  // --- chant video ---
 
   document.getElementById("chant-video").src = chant.video;
 
-  // Chant audio download
+  // --- Chant audio download ---
 
   document.getElementById("chant-audio-download").href = chant.audio;
   document.getElementById("chant-pdf-download").href = chant.pdf;
