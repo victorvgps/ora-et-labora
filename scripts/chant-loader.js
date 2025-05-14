@@ -11,10 +11,28 @@ function loadChant() {
   const id = getChantIdFromUrl();
   const chant = chants[id];
 
+  // --- Error message if url is wrong --- 
+
   if (!chant) {
-    document.body.innerHTML = "<p style='text-align:center;'>Canto não encontrado.</p>";
-    return;
-  }
+  const error = document.createElement("h1");
+  error.classList.add("error");
+  error.id = "error-message";
+  error.textContent = "Canto não encontrado!";
+
+  const errorGoBackButton = document.createElement("button");
+  errorGoBackButton.classList.add("btn-error-go-back");
+  errorGoBackButton.id = "btn-error-back";
+  errorGoBackButton.textContent = "← Voltar para a Página Inicial";
+
+  errorGoBackButton.addEventListener("click", () => {
+    window.location.href = "index.html"; 
+  });
+
+  document.body.innerHTML = ""; 
+  document.body.appendChild(error);         
+  document.body.appendChild(errorGoBackButton);  
+  return;
+}
 
   // --- Fill HTML data ---
 
