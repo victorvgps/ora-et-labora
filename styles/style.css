@@ -363,6 +363,7 @@ iframe {
 
 #btn-toggle-lyrics {
   margin-top: 10px;
+  margin-bottom: 20px;
   background-color: var(--cor-secundaria);
   color: #fff;
   padding: 8px 15px;
@@ -375,6 +376,7 @@ iframe {
 
 #btn-toggle-lyrics-translation {
   margin-top: 10px;
+  margin-bottom: 20px;
   background-color: var(--cor-secundaria);
   color: #fff;
   padding: 8px 15px;

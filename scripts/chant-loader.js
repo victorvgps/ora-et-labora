@@ -38,9 +38,11 @@ function loadChant() {
     lyricsDiv.appendChild(el);
   });
 
+
+
   // Chant translation
 
-  const translDiv = document.getElementById("chant-translation");
+  const translDiv = document.getElementById("chant-lyrics-translated");
   translDiv.innerHTML = "";
   chant.translation.forEach(p => {
     const el = document.createElement("p");
@@ -48,6 +50,12 @@ function loadChant() {
     el.innerHTML = p;
     translDiv.appendChild(el);
   });
+
+  // Expand translation button 
+
+ 
+
+
 
   // Chant history 
 
