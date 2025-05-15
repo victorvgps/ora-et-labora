@@ -374,6 +374,19 @@ iframe {
   
 }
 
+#btn-toggle-history {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-color: var(--cor-secundaria);
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  
+}
+
 .error {
   display: block;
   margin: auto;
@@ -426,7 +439,7 @@ iframe {
 }
 
 .hidden.open {
-  max-height: 2000px; 
+  max-height: 5000px; 
   opacity: 1;
 }
 

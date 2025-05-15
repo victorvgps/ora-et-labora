@@ -14,25 +14,25 @@ function loadChant() {
   // --- Error message if url is wrong --- 
 
   if (!chant) {
-  const error = document.createElement("h1");
-  error.classList.add("error");
-  error.id = "error-message";
-  error.textContent = "Canto não encontrado!";
+    const error = document.createElement("h1");
+    error.classList.add("error");
+    error.id = "error-message";
+    error.textContent = "Canto não encontrado!";
 
-  const errorGoBackButton = document.createElement("button");
-  errorGoBackButton.classList.add("btn-error-go-back");
-  errorGoBackButton.id = "btn-error-back";
-  errorGoBackButton.textContent = "← Voltar para a Página Inicial";
+    const errorGoBackButton = document.createElement("button");
+    errorGoBackButton.classList.add("btn-error-go-back");
+    errorGoBackButton.id = "btn-error-back";
+    errorGoBackButton.textContent = "← Voltar para a Página Inicial";
 
-  errorGoBackButton.addEventListener("click", () => {
-    window.location.href = "index.html"; 
-  });
+    errorGoBackButton.addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
 
-  document.body.innerHTML = ""; 
-  document.body.appendChild(error);         
-  document.body.appendChild(errorGoBackButton);  
-  return;
-}
+    document.body.innerHTML = "";
+    document.body.appendChild(error);
+    document.body.appendChild(errorGoBackButton);
+    return;
+  }
 
   // --- Fill HTML data ---
 
@@ -82,8 +82,8 @@ function loadChant() {
       hiddenLyrics.classList.toggle("open");
 
       btnToggleLyrics.textContent = hiddenLyrics.classList.contains("open")
-        ? "Ver Letra Completa"
-        : "Ocultar Letra";
+        ? "Ocultar Letra"
+        : "Ver Letra Completa";
     });
   }
 
@@ -126,8 +126,8 @@ function loadChant() {
       lyricsBlockTranslation.classList.toggle("open");
 
       btnToggleTranslation.textContent = lyricsBlockTranslation.classList.contains("open")
-        ? "Ver Tradução Completa"
-        : "Ocultar Tradução";
+        ? "Ocultar Tradução"
+        : "Ver Tradução Completa";
     });
   }
 
@@ -137,13 +137,41 @@ function loadChant() {
 
   const histDiv = document.getElementById("chant-history");
   histDiv.innerHTML = "";
-  chant.history.forEach(p => {
+
+  const hiddenHistDiv = document.createElement("div");
+  hiddenHistDiv.classList.add("hidden");
+  hiddenHistDiv.id = "chant-hidden-history";
+
+  chant.history.forEach((line, index) => {
     const el = document.createElement("p");
-    el.classList.add("texto-colorido");
-    el.innerHTML = p;
-    el.classList.add("cardo-regular");
-    histDiv.appendChild(el);
+    el.classList.add("texto-colorido", "cardo-regular");
+    el.innerHTML = line;
+
+    if (index < 1) {
+      histDiv.appendChild(el);
+    }
+    else {
+      hiddenHistDiv.appendChild(el);
+    }
   });
+  histDiv.appendChild(hiddenHistDiv);
+
+  function initializeExpandHistoryButton() {
+    const btnToggleHist = document.getElementById("btn-toggle-history");
+    const histBlock = document.getElementById("chant-hidden-history");
+
+    if (!btnToggleHist || !histBlock) return;
+
+    btnToggleHist.addEventListener("click", () => {
+      histBlock.classList.toggle("open");
+
+      btnToggleHist.textContent = histBlock.classList.contains("open")
+        ? "Ocultar História do Canto"
+        : "Expandir História do Canto";
+    });
+  }
+
+  initializeExpandHistoryButton();
 
   // --- chant video ---
 
@@ -156,6 +184,3 @@ function loadChant() {
 };
 
 loadChant();
-
-
-
