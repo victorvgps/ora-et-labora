@@ -175,3 +175,4 @@ initializeToggleButton({
   showText: "Ver Letra Completa",
   hideText: "Ocultar Letra"
 });
+

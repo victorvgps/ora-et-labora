@@ -32,20 +32,12 @@
         </ul>
     </nav>
     <main>
-        <section class="artigos">
-            <div class="artigo" id="petrus">
-                <img src="images/petrus.png" alt="Descrição do artigo">
-                <h3>Reflexões sobre o filme Conclave (2024)</h3>
-                <p class="cardo-regular">A incessante tentativa de Hollywood de difamar a Santa Madre Igreja...</p>
-                <a href="article.html?article=Conclave-2024">Leia mais</a>
-            </div>
-
-            <div class="artigo">
-                <img src="images/saint-augustine.png" alt="Descrição do artigo">
-                <h3>Sobre o pecado original</h3>
-                <p class="cardo-regular">Os primeiros capítulos de Gênesis são, não raro, usados em releituras gnósticas
-                    da bíblia</p>
-                <a href="article.html?article=sobre-o-pecado-original">Leia mais</a>
+        <section class="article">
+            <div class="articles" id="article-main-image">
+                 <h1 id="article-title"></h1>
+                <img id="article-image" src="" alt="">
+                <p class="cardo-regular" id="article-description"></p>
+                <div id="article-content"></div>
             </div>
         </section>
 
@@ -74,5 +66,8 @@
         <p>Site criado por Victor Guilherme Pereira</p>
     </footer>
 </body>
+<script src="scripts/article-data.js"></script>
+<script src="scripts/article-loader.js"></script>
 <script src="scripts/script.js"></script>
+
 </html>
