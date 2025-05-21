@@ -112,3 +112,13 @@ if (backButton) {
   });
 }
 
+// --- button to go article back ---
+
+const backArticleButton = document.getElementById("btn-articles");
+
+if (backArticleButton) {
+  backArticleButton.addEventListener("click", () => {
+    window.location.href = "./articles.html";
+  });
+}
+
