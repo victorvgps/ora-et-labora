@@ -1,3 +1,4 @@
+
 //  --- URL parameter ---
 
 function getChantIdFromUrl() {
@@ -70,30 +71,10 @@ function loadChant() {
 
   lyricsDiv.appendChild(hiddenDiv);
 
-  // --- Expand lyrics button ---
-
-  function initializeExpandLyricsButton() {
-    const btnToggleLyrics = document.getElementById("btn-toggle-lyrics");
-    const hiddenLyrics = document.getElementById("chant-lyrics-hidden");
-
-    if (!btnToggleLyrics || !hiddenLyrics) return;
-
-    btnToggleLyrics.addEventListener("click", () => {
-      hiddenLyrics.classList.toggle("open");
-
-      btnToggleLyrics.textContent = hiddenLyrics.classList.contains("open")
-        ? "Ocultar Letra"
-        : "Ver Letra Completa";
-    });
-  }
-
-  initializeExpandLyricsButton();
-
   // --- Chant translation ---
 
   const translDiv = document.getElementById("chant-lyrics-translated");
   translDiv.innerHTML = "";
-
 
   // --- To show only first four verses of the chant ---
 
@@ -113,25 +94,6 @@ function loadChant() {
     }
   });
   translDiv.appendChild(hiddenTranslDiv);
-
-  // --- Expand translation button ---
-
-  function initializeExpandTranslationButton() {
-    const btnToggleTranslation = document.getElementById("btn-toggle-lyrics-translation");
-    const lyricsBlockTranslation = document.getElementById("chant-lyrics-translation-hidden");
-
-    if (!btnToggleTranslation || !lyricsBlockTranslation) return;
-
-    btnToggleTranslation.addEventListener("click", () => {
-      lyricsBlockTranslation.classList.toggle("open");
-
-      btnToggleTranslation.textContent = lyricsBlockTranslation.classList.contains("open")
-        ? "Ocultar Tradução"
-        : "Ver Tradução Completa";
-    });
-  }
-
-  initializeExpandTranslationButton();
 
   // --- Chant history ---
 
@@ -156,23 +118,7 @@ function loadChant() {
   });
   histDiv.appendChild(hiddenHistDiv);
 
-  function initializeExpandHistoryButton() {
-    const btnToggleHist = document.getElementById("btn-toggle-history");
-    const histBlock = document.getElementById("chant-hidden-history");
-
-    if (!btnToggleHist || !histBlock) return;
-
-    btnToggleHist.addEventListener("click", () => {
-      histBlock.classList.toggle("open");
-
-      btnToggleHist.textContent = histBlock.classList.contains("open")
-        ? "Ocultar História do Canto"
-        : "Expandir História do Canto";
-    });
-  }
-
-  initializeExpandHistoryButton();
-
+  
   // --- chant video ---
 
   document.getElementById("chant-video").src = chant.video;
@@ -184,3 +130,48 @@ function loadChant() {
 };
 
 loadChant();
+
+// --- Expand button function ---
+
+function initializeToggleButton({
+  buttonId,
+  targetId,
+  showText = "Mostrar mais",
+  hideText = "Ocultar"
+}) {
+  const button = document.getElementById(buttonId);
+  const target = document.getElementById(targetId);
+
+  if (!button || !target) return;
+
+  button.addEventListener("click", () => {
+    target.classList.toggle("open");
+
+    button.textContent = target.classList.contains("open")
+      ? hideText
+      : showText;
+  });
+}
+
+initializeToggleButton({
+  buttonId: "btn-toggle-history",
+  targetId: "chant-hidden-history",
+  showText: "Expandir História do Canto",
+  hideText: "Ocultar História do Canto"
+});
+
+
+initializeToggleButton({
+  buttonId: "btn-toggle-lyrics-translation",
+  targetId: "chant-lyrics-translation-hidden",
+  showText: "Ver Tradução Completa",
+  hideText: "Ocultar Tradução"
+});
+
+
+initializeToggleButton({
+  buttonId: "btn-toggle-lyrics",
+  targetId: "chant-lyrics-hidden",
+  showText: "Ver Letra Completa",
+  hideText: "Ocultar Letra"
+});
