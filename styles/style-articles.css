@@ -532,6 +532,10 @@ body.dark p {
     
 }
 
+.theme-toggle p {
+    padding: 5px 10px;
+}
+
 .theme-toggle input {
     display: none;
 }

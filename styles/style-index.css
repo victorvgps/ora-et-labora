@@ -455,6 +455,9 @@ body.dark p {
     padding: 10px 20px;
     
 }
+.theme-toggle p {
+    padding: 5px 10px;
+}
 
 .theme-toggle input {
     display: none;

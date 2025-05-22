@@ -125,11 +125,13 @@ if (backArticleButton) {
 // --- Dark theme button --- 
 
 const ToggleInput = document.getElementById("toggle-theme");
+const darkThemeButtonText = document.getElementById("text");
 
 ToggleInput.addEventListener("change", () => {
   document.body.classList.toggle("dark");
   const theme = document.body.classList.contains("dark") ? "dark" : "light";
   localStorage.setItem("theme", theme);
+  updateToggleThemeButtonText();
 });
 
 const savedTheme = localStorage.getItem("theme");
@@ -137,3 +139,12 @@ if (savedTheme === "dark") {
   document.body.classList.add("dark");
   ToggleInput.checked = true;
 }
+
+// --- function to change button text --- 
+
+function updateToggleThemeButtonText() {
+  const theme = document.body.classList.contains("dark") ? "dark" : "light";
+  darkThemeButtonText.innerHTML = theme === "dark" ? "Ativar Modo Claro" : "Ativar Modo Escuro";
+}
+
+updateToggleThemeButtonText();
