@@ -57,6 +57,8 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center -320px;
+    position: relative;
+    z-index: 0;
 
 }
 
@@ -449,6 +451,18 @@ footer p {
 
 /* Dark theme style */
 
+body,
+main,
+header,
+nav,
+footer,
+button,
+a,
+p,
+h1, h2, h3, h4, h5, h6 {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
 body.dark {
   --cor-primaria: #5e4e3d;
   --cor-secundaria: #7c6244;
@@ -458,7 +472,18 @@ body.dark {
 
   background-color: #1e1b18;
   color: var(--cor-texto);
-  
+}
+
+body.dark::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.171); 
+  z-index: -1; 
+  pointer-events: none;
 }
 
 body.dark main {
@@ -474,7 +499,7 @@ color: #D9A74A;
 }
 
 body.dark nav {
-  background-color: rgba(150, 140, 120, 0.3);
+  background-color: rgba(150, 140, 120, 0.596);
 }
 
 body.dark a {
@@ -484,15 +509,6 @@ body.dark a {
 body.dark .citacao {
   background-color: rgba(100, 80, 60, 0.2);
   border-left-color: var(--cor-secundaria);
-}
-
-body.dark .artigo {
-     background-color: rgba(100, 80, 60, 0.2);
-     border-left-color: var(--cor-secundaria);
-}
-
-body.dark .artigo a {
-    color: white;
 }
 
 body.dark .leia-mais a {
@@ -513,6 +529,7 @@ body.dark p {
     display: flex;
     justify-content: flex-end;
     padding: 10px 20px;
+    
 }
 
 .theme-toggle input {
