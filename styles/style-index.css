@@ -382,6 +382,7 @@ body.dark {
 
   background-color: #1e1b18;
   color: var(--cor-texto);
+  
 }
 
 body.dark main {
@@ -416,7 +417,6 @@ body.dark .leia-mais a {
 body.dark p {
     color: white;
 }
-
 
 /* Dark theme button */
 
