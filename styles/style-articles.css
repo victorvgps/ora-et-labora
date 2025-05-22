@@ -506,6 +506,15 @@ body.dark a {
   color: var(--cor-primaria);
 }
 
+body.dark .artigo {
+  background-color: rgba(100, 80, 60, 0.2);
+  border-left-color: var(--cor-secundaria);
+}
+
+body.dark .artigo a {
+    color: white;
+}
+
 body.dark .citacao {
   background-color: rgba(100, 80, 60, 0.2);
   border-left-color: var(--cor-secundaria);
