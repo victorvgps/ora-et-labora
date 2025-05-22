@@ -122,3 +122,18 @@ if (backArticleButton) {
   });
 }
 
+// --- Dark theme button --- 
+
+const ToggleInput = document.getElementById("toggle-theme");
+
+ToggleInput.addEventListener("change", () => {
+  document.body.classList.toggle("dark");
+  const theme = document.body.classList.contains("dark") ? "dark" : "light";
+  localStorage.setItem("theme", theme);
+});
+
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+  document.body.classList.add("dark");
+  ToggleInput.checked = true;
+}

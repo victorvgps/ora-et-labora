@@ -48,8 +48,8 @@
 }
 
 body {
-     background-color: #fff; /* Cor de fundo clara */
-     color: #333; /* Texto escuro */
+     background-color: #fff; 
+     color: #333; 
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -371,3 +371,94 @@ footer p {
     color: var(--cor-texto);
 }
 
+/* Dark theme style */
+
+body.dark {
+  --cor-primaria: #5e4e3d;
+  --cor-secundaria: #7c6244;
+  --cor-terciaria: #a98c5b;
+  --cor-quaternaria: #999;
+  --cor-texto: #f2e5d7;
+
+  background-color: #1e1b18;
+  color: var(--cor-texto);
+}
+
+body.dark main {
+  background-color: #2b2622;
+}
+
+body.dark h1 {
+color: #D9A74A;
+}
+
+body.dark header p {
+color: #D9A74A;
+}
+
+body.dark nav {
+  background-color: rgba(150, 140, 120, 0.3);
+}
+
+body.dark a {
+  color: var(--cor-primaria);
+}
+
+body.dark .citacao {
+  background-color: rgba(100, 80, 60, 0.2);
+  border-left-color: var(--cor-secundaria);
+}
+
+body.dark .leia-mais a {
+  color: white;
+}
+
+body.dark p {
+    color: white;
+}
+
+
+/* Dark theme button */
+
+#toggle-theme {
+    border-radius: 10px;
+}
+
+.theme-toggle {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+}
+
+.theme-toggle input {
+    display: none;
+}
+
+.switch {
+    width: 60px;
+    height: 30px;
+    background-color: var(--cor-quaternaria);
+    border-radius: 15px;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.switch::before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    transition: transform 0.3s ease;
+}
+
+input:checked + .switch {
+    background-color: var(--cor-primaria);
+}
+
+input:checked + .switch::before {
+    transform: translate(30px);
+}
