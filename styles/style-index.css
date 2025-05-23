@@ -405,13 +405,13 @@ body.dark::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.171); 
+  background-color: rgba(0, 0, 0, 0.295); 
   z-index: -1; 
   pointer-events: none;
 }
 
 body.dark main {
-  background-color: #2b2622;
+  background-color: #181513;
 }
 
 body.dark h1 {
