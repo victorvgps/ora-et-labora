@@ -149,23 +149,76 @@ function updateToggleThemeButtonText() {
 
 updateToggleThemeButtonText();
 
-// --- commentary section script --- 
+// --- Comment section script ---
 
 const form = document.getElementById("form-comments");
-const list = document.getElementById("comments-list");
+const commentsList = document.getElementById("comments-list");
+
+let comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+const MAX_COMMENTS_DISPLAY = 10;
+
+// --- Timestamp function ---
+
+function formatTimestamp(dateObject) {
+    const options = {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    };
+    return dateObject.toLocaleString('pt-BR', options);
+}
+
+// --- render comments function ---
+
+function renderComments() {
+    commentsList.innerHTML = ""; 
+
+    const commentsToDisplay = [...comments].reverse(); 
+
+    const limitedComments = commentsToDisplay.slice(0, MAX_COMMENTS_DISPLAY); 
+
+    limitedComments.forEach(commentData => {
+        const commentary = document.createElement("p");
+        commentary.innerHTML = `<strong>${commentData.name}</strong>: ${commentData.message} <br><small>${commentData.timestamp}</small>`;
+        commentary.classList.add("cardo-regular");
+        commentsList.appendChild(commentary);
+    });
+}
+
+// --- Event Listener to form submit ---
 
 form.addEventListener("submit", function (e) {
-  e.preventDefault();
+    e.preventDefault();
 
-  const name = document.getElementById("name").value.trim();
-  const message = document.getElementById("message").value.trim();
+    const nameInput = document.getElementById("name");
+    const messageInput = document.getElementById("message");
 
-  if (name && message) {
-    const commentary = document.createElement("p");
-    commentary.innerHTML = `<strong>${name}</strong>: ${message}`;
-    commentary.classList.add("cardo-regular")
-    list.appendChild(commentary);
+    const name = nameInput.value.trim();
+    const message = messageInput.value.trim();
 
-    form.reset();
-  }
+    if (name && message) {
+        const now = new Date();
+        const timestamp = formatTimestamp(now);
+
+        const newComment = {
+            name: name,
+            message: message,
+            timestamp: timestamp
+        };
+
+        comments.push(newComment); 
+
+        localStorage.setItem("comments", JSON.stringify(comments));
+
+        renderComments(); 
+
+        form.reset(); 
+    }
 });
+
+
+document.addEventListener("DOMContentLoaded", renderComments);
