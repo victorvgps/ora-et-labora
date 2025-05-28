@@ -148,3 +148,24 @@ function updateToggleThemeButtonText() {
 }
 
 updateToggleThemeButtonText();
+
+// --- commentary section script --- 
+
+const form = document.getElementById("form-comments");
+const list = document.getElementById("comments-list");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (name && message) {
+    const commentary = document.createElement("p");
+    commentary.innerHTML = `<strong>${name}</strong>: ${message}`;
+    commentary.classList.add("cardo-regular")
+    list.appendChild(commentary);
+
+    form.reset();
+  }
+});

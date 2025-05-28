@@ -217,7 +217,7 @@ section>p {
     margin-right: 15px;
     margin-top: 10px;
     background: #f2c572;
-    color: #4e2e15;
+    color: white;
     padding: 10px;
     border-radius: 5px;
     text-decoration: none;
@@ -312,7 +312,7 @@ iframe {
 
 .newsletter button {
     padding: 10px 20px;
-    background-color: var(--cor-primaria);
+    background-color: var(--cor-secundaria);
     color: white;
     border: none;
     border-radius: 5px;
@@ -515,6 +515,10 @@ body.dark a {
   color: var(--cor-primaria);
 }
 
+body.dark .comments p {
+  color: black;
+}
+
 body.dark .citacao {
   background-color: rgba(100, 80, 60, 0.2);
   border-left-color: var(--cor-secundaria);
@@ -583,4 +587,39 @@ input:checked + .switch {
 
 input:checked + .switch::before {
     transform: translate(30px);
+}
+
+.comments {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgba(191, 184, 180, 0.25);
+    border-radius: 10px;
+}
+
+.comments input,
+.comments textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--cor-quaternaria);
+}
+
+#comments-list p {
+    padding: 10px;
+    background-color: #fff;
+    border-left: 3px solid var(--cor-primaria);
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.btn-comment {
+    margin-top: 10px;
+    background-color: var(--cor-secundaria);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    border-color: var(--cor-secundaria);
+    
 }

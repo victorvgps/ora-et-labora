@@ -378,7 +378,7 @@ main h1 {
 
 .newsletter button {
     padding: 10px 20px;
-    background-color: var(--cor-primaria);
+    background-color: var(--cor-secundaria);
     color: white;
     border: none;
     border-radius: 5px;
@@ -576,4 +576,44 @@ input:checked + .switch {
 
 input:checked + .switch::before {
     transform: translate(30px);
+}
+
+.comments {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgba(191, 184, 180, 0.25);
+    border-radius: 10px;
+}
+
+.comments h2 {
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+}
+
+.comments input,
+.comments textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--cor-quaternaria);
+}
+
+#comments-list p {
+    padding: 10px;
+    background-color: #fff;
+    border-left: 3px solid var(--cor-primaria);
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.btn-comment {
+    margin-top: 10px;
+    background-color: var(--cor-secundaria);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    border-color: var(--cor-secundaria);
+    
 }
