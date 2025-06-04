@@ -613,7 +613,7 @@ input:checked + .switch::before {
     border-radius: 6px;
 }
 
-.btn-comment {
+.btn-comment, .btn-comment-del {
     margin-top: 10px;
     background-color: var(--cor-secundaria);
     color: white;
@@ -623,3 +623,12 @@ input:checked + .switch::before {
     border-color: var(--cor-secundaria);
     
 }
+
+.btn-comment:hover {
+    background-color: var(--cor-terciaria);
+}
+
+.btn-comment-del:hover {
+    background-color: var(--cor-terciaria);
+}
+
