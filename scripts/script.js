@@ -155,9 +155,15 @@ updateToggleThemeButtonText();
 const form = document.getElementById("form-comments");
 const commentsList = document.getElementById("comments-list");
 
-let commentsJson = localStorage.getItem("comments");
+let comments = [];
 
-let comments = commentsJson !== 'undefined' ? JSON.parse(localStorage.getItem("comments")) : [];
+try {
+  const commentsJson = localStorage.getItem("comments");
+  comments = commentsJson ? JSON.parse(commentsJson) : [];
+} catch (error) {
+  console.error("Erro ao analisar comentários:", error);
+  comments = [];
+}
 
 const MAX_COMMENTS_DISPLAY = 10;
 
@@ -199,11 +205,11 @@ function renderComments() {
 
     deleteCommentsBtn.addEventListener("click", () => deleteComment(commentData.id));
 
-    function deleteComment() {
-      comments = comments.filter(comment => comment.id !== commentData.id);
+    function deleteComment(id) {
+      comments = comments.filter(comment => comment.id !== id);
       localStorage.setItem("comments", JSON.stringify(comments));
       renderComments();
-    };
+    }
   });
 }
 
