@@ -1,6 +1,5 @@
 // --- Show random chant ---
 
-console.log("randomQuote");
 const randomChant = [
   {
     title: "Miserere Mei Deus",
@@ -157,7 +156,6 @@ const form = document.getElementById("form-comments");
 const commentsList = document.getElementById("comments-list");
 
 let commentsJson = localStorage.getItem("comments");
-console.log(commentsJson);
 
 let comments = commentsJson !== 'undefined' ? JSON.parse(localStorage.getItem("comments")) : [];
 
@@ -166,82 +164,82 @@ const MAX_COMMENTS_DISPLAY = 10;
 // --- Timestamp function ---
 
 function formatTimestamp(dateObject) {
-    const options = {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
-    };
-    return dateObject.toLocaleString('pt-BR', options);
+  const options = {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  };
+  return dateObject.toLocaleString('pt-BR', options);
 }
 
 // --- render comments function ---
 
 function renderComments() {
-    commentsList.innerHTML = ""; 
+  commentsList.innerHTML = "";
 
-    const commentsToDisplay = [...comments].reverse(); 
+  const commentsToDisplay = [...comments].reverse();
 
-    const limitedComments = commentsToDisplay.slice(0, MAX_COMMENTS_DISPLAY); 
-    
+  const limitedComments = commentsToDisplay.slice(0, MAX_COMMENTS_DISPLAY);
 
-    limitedComments.forEach((commentData, index) => {
-        const commentary = document.createElement("p");
-        commentary.innerHTML = `<strong>${commentData.name}</strong>: ${commentData.message} <br><small>${commentData.timestamp}</small>`;
-        commentary.classList.add("cardo-regular");
-        commentsList.appendChild(commentary);
 
-        const deleteCommentsBtn = document.createElement("button");
-        deleteCommentsBtn.innerHTML = "Deletar Comentário";
-        deleteCommentsBtn.classList.add("btn-comment-del")
+  limitedComments.forEach((commentData, index) => {
+    const commentary = document.createElement("p");
+    commentary.innerHTML = `<strong>${commentData.name}</strong>: ${commentData.message} <br><small>${commentData.timestamp}</small>`;
+    commentary.classList.add("cardo-regular");
+    commentsList.appendChild(commentary);
 
-        commentsList.appendChild(deleteCommentsBtn);
-        
-        deleteCommentsBtn.addEventListener("click", () => deleteComment(commentData.id));
-        
-        function deleteComment() {
-         comments = comments.filter(comment => comment.id !== commentData.id);
-         localStorage.setItem("comments", JSON.stringify(comments));
-         renderComments();
-        };
-    });
+    const deleteCommentsBtn = document.createElement("button");
+    deleteCommentsBtn.innerHTML = "Deletar Comentário";
+    deleteCommentsBtn.classList.add("btn-comment-del")
+
+    commentsList.appendChild(deleteCommentsBtn);
+
+    deleteCommentsBtn.addEventListener("click", () => deleteComment(commentData.id));
+
+    function deleteComment() {
+      comments = comments.filter(comment => comment.id !== commentData.id);
+      localStorage.setItem("comments", JSON.stringify(comments));
+      renderComments();
+    };
+  });
 }
 
 // --- Event Listener to form submit ---
 if (form) {
-  
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
 
-  const nameInput = document.getElementById("name");
-  const messageInput = document.getElementById("message");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  const name = nameInput.value.trim();
-  const message = messageInput.value.trim();
+    const nameInput = document.getElementById("name");
+    const messageInput = document.getElementById("message");
 
-  if (name && message) {
+    const name = nameInput.value.trim();
+    const message = messageInput.value.trim();
+
+    if (name && message) {
       const now = new Date();
       const timestamp = formatTimestamp(now);
 
       const newComment = {
-          id: Date.now(),
-          name: name,
-          message: message,
-          timestamp: timestamp
+        id: Date.now(),
+        name: name,
+        message: message,
+        timestamp: timestamp
       };
-      console.log(newComment);
 
-      comments.push(newComment); 
+
+      comments.push(newComment);
 
       localStorage.setItem("comments", JSON.stringify(comments));
 
-      renderComments(); 
+      renderComments();
 
-      form.reset(); 
-  }
-});
+      form.reset();
+    }
+  });
 
 }
 
