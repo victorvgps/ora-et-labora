@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artigos | Ora et Labora</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/style-articles.css">
+    <link rel="stylesheet" href="styles/media-query.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-titulo">
+            <img src="images/logo.png" alt="Logo Ora et Labora" class="logo">
+            <div class="titulo">
+                <h1>ORA ET LABORA</h1>
+                <p>Cantos Gregorianos</p>
+            </div>
+            <img src="images/logo.png" alt="Logo Ora et Labora" class="logo">
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#">Todos os Cantos</a></li>
+            <li><a href="./articles.html">Artigos</a></li>
+            <li><a href="#">Orações em Latim</a></li>
+            <li><a href="#">Sobre</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="theme-toggle">
+            <p id="text"></p>
+            <input type="checkbox" id="toggle-theme">
+            <label for="toggle-theme" class="switch"></label>
+        </div>
+        <section class="artigos">
+            <div class="artigo" id="petrus">
+                <img src="images/petrus.png" alt="Descrição do artigo">
+                <h3>Reflexões sobre o filme Conclave (2024)</h3>
+                <p class="cardo-regular">A incessante tentativa de Hollywood de difamar a Santa Madre Igreja...</p>
+                <a href="article.html?article=Conclave-2024">Leia mais</a>
+            </div>
+
+                <div class="artigo" id="saint-augustine">
+                <img src="images/saint-augustine.png" alt="Descrição do artigo">
+                <h3>Sobre o pecado original</h3>
+                <p class="cardo-regular">Os primeiros capítulos de Gênesis são, não raro, usados em releituras gnósticas
+                    da bíblia</p>
+                <a href="article.html?article=sobre-o-pecado-original">Leia mais</a>
+            </div>
+
+            <div class="artigo" id="scholastics">
+                <img src="images/scholastics.png" alt="Descrição do artigo">
+                <h3>Mediacionismo Realista</h3>
+                <p class="cardo-regular">Ontologia da Criatura, Crítica da Gnose Permanente e Horizonte Apostólico</p>
+                <a href="article.html?article=mediacionismo-realista">Leia mais</a>
+            </div>
+        </section>
+
+        <blockquote class="citacao cardo-regular-italic" id="citacao-dia"></blockquote>
+
+        <button id="btn-new-quote" type="button" title="nova citacao-dia">Nova Citação</button>
+
+        <div class="leia-mais">
+            <a href="sobre-canto-gregoriano.html">O que é o Canto Gregoriano?</a>
+        </div>
+
+        <section class="newsletter">
+            <h2>Receba novidades sobre novos cantos</h2>
+            <form>
+                <input type="email" placeholder="Seu email" required>
+                <button type="submit">Inscrever-se</button>
+            </form>
+        </section>
+
+        <div class="botoes-retorno">
+            <button id="btn-back" type="button" title="Voltar para Home">← Página Inicial</button>
+        </div>
+    </main>
+
+    <button id="btn-topo" type="button" title="Voltar ao topo">↑</button>
+
+    <footer>
+        <p>Site criado por Victor Guilherme Pereira</p>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+
+</body>
+
+</html>
